@@ -1,0 +1,44 @@
+@import "variables";
+
+@mixin button {
+  outline: none;
+  border: none;
+  border-radius: $border-radius;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin animation($time) {
+  -webkit-transition: all #{$time} linear;
+  -moz-transition: all #{$time} linear;
+  -o-transition: all #{$time} linear;
+  transition: all #{$time} linear;
+}
+
+@mixin placeholder($color, $focusColor) {
+  &::placeholder { color: #{$color}; }
+  &::-webkit-input-placeholder { color: #{$color}; }
+  &::-moz-placeholder { color: #{$color}; }
+  &:-moz-placeholder { color: #{$color}; }
+  &:-ms-input-placeholder { color: #{$color}; }
+
+  &:focus {
+    &::placeholder { color: #{$focusColor}; }
+    &::-webkit-input-placeholder { color: #{$focusColor}; }
+    &::-moz-placeholder { color: #{$focusColor}; }
+    &:-moz-placeholder { color: #{$focusColor}; }
+    &:-ms-input-placeholder { color: #{$focusColor}; }
+  }
+}
+
+@mixin defaultBorder {
+  border: 0.0625rem solid #dedede;
+
+  &:focus {
+    border: 0.0625rem solid $default-color;
+  }
+}
